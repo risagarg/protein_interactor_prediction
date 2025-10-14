@@ -86,10 +86,6 @@ This framework is meant to be applied to:
 
 Please feel free to submit a Pull Request.
 
-## License
-
-This project is licensed under the MIT License.
-
 ## Author
 
 **Risa Garg** - risagarg@sas.upenn.edu
