@@ -15,7 +15,7 @@ This project presents a machine learning framework for predicting protein-protei
 ## Key Features
 
 - Rigorous Methodology: Comprehensive data leakage detection and prevention
-- Scalable Pipeline: Processes entire human proteome (~20,000 proteins)
+- Scalable Pipeline: Processes Uniprot human proteome (~20,000 proteins)
 - Interpretable Models: SHAP analysis for feature importance
 - Production Ready: Modular code structure with proper validation
 
@@ -28,31 +28,15 @@ This project presents a machine learning framework for predicting protein-protei
 
 ## Project Structure
 protein_interactor_prediction/
-├── notebooks/ # Jupyter notebooks for analysis
-│ ├── 01_data_collection_and_filtering.ipynb
-│ ├── 02_feature_engineering.ipynb
-│ ├── 03_model_development.ipynb
-│ ├── 04_data_leakage_analysis.ipynb
-│ ├── 05_model_evaluation.ipynb
-│ └── 06_proteome_prediction.ipynb
-├── src/ # Source code modules
-│ ├── data_collection/ # Data collection and filtering
-│ ├── feature_engineering/ # Feature extraction and processing
-│ ├── models/ # ML models and validation
-│ └── utils/ # Utility functions
-├── data/ # Data storage
-├── models/ # Trained models and features
-└── docs/ # Documentation
-
-## Quick Start
-
-### Installation
-
-```bash
-git clone https://github.com/risagarg/protein_interactor_prediction.git
-cd protein_interactor_prediction
-pip install -r requirements.txt
-```
+├── notebooks/
+│   ├── 01_data_collection_and_filtering.ipynb
+│   ├── 02_feature_engineering.ipynb
+│   ├── 03_model_development.ipynb
+│   ├── 04_data_leakage_analysis.ipynb
+│   ├── 05_model_evaluation.ipynb
+│   └── 06_proteome_prediction.ipynb
+├── README.md
+└── requirements.txt
 
 ### Basic Usage
 
@@ -94,9 +78,15 @@ predictions = predictor.predict_proteins(protein_list)
 - Cross-validation with proper feature alignment
 - SHAP analysis for model interpretability
 
-## Scientific Applications
+### 5. Reproducibility 
+- This is a research project demonstrating ML techniques for protein interaction prediction. The notebooks show the complete methodology, but require access to protein databases.
 
-This framework can be applied to:
+## Data Leakage Prevention
+We identified and corrected a data leakage issue in our pipeline. 
+See Notebook 4 for detailed analysis of the problem and solution.
+
+## Scientific Applications
+This framework is meant to be applied to:
 
 - Drug Discovery: Identifying novel drug targets
 - Intrinsically Disordered Proteins: Understanding IDP interactions
@@ -111,7 +101,7 @@ This framework can be applied to:
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Please feel free to submit a Pull Request.
 
 ## License
 
@@ -120,7 +110,3 @@ This project is licensed under the MIT License.
 ## Author
 
 **Risa Garg** - risagarg@sas.upenn.edu
-
----
-
-This project demonstrates advanced machine learning techniques applied to computational biology, showcasing skills in data science, bioinformatics, and rigorous scientific methodology.
