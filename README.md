@@ -38,23 +38,6 @@ protein_interactor_prediction/
 ├── README.md
 └── requirements.txt
 
-### Basic Usage
-
-```python
-from src.models.ensemble_classifier import ProteinInteractorPredictor
-
-# Initialize predictor
-predictor = ProteinInteractorPredictor()
-
-# Load trained models
-predictor.load_models('models/trained_models/')
-
-# Predict interactions
-predictions = predictor.predict_proteins(protein_list)
-```
-
-## Methodology
-
 ### 1. Data Collection & Filtering
 - Systematic negative dataset creation using STRING network analysis
 - Cellular compartment and tissue expression filtering
