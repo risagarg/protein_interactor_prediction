@@ -12,19 +12,18 @@ This project presents a machine learning framework for predicting protein-protei
 - DBSCAN clustering for protein grouping
 - XGBoost ensemble models for prediction
 
-## Key Features
+## Features
 
-- Rigorous Methodology: Comprehensive data leakage detection and prevention
-- Scalable Pipeline: Processes Uniprot human proteome (~20,000 proteins)
-- Interpretable Models: SHAP analysis for feature importance
-- Production Ready: Modular code structure with proper validation
+- Comprehensive data leakage detection and prevention
+- Processes Uniprot human proteome (~20,000 proteins)
+- SHAP analysis for feature importance
+- Modular code structure with proper validation
 
 ## Results
 
-- Novel Predictions: Identified 1000 novel protein interactors (tested with amyloid beta)
-- Model Performance: F1-score of 0.78 on holdout data
-- Cross-Validation: 0.76 ± 0.03 F1-score across folds
-- Data Leakage: Zero overlap between training and test sets
+- Identified 1000 novel protein interactors (tested with amyloid beta)
+-  F1-score of 0.78 on holdout data
+-  0.76 ± 0.03 F1-score across folds
 
 ## Project Structure
 protein_interactor_prediction/
