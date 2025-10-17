@@ -27,22 +27,37 @@ This project presents a machine learning framework for predicting protein-protei
 - Data Leakage: Zero overlap between training and test sets
 
 ## Project Structure
+```
 protein_interactor_prediction/
-├── notebooks/ # Jupyter notebooks for analysis
-│ ├── 01_data_collection_and_filtering.ipynb
-│ ├── 02_feature_engineering.ipynb
-│ ├── 03_model_development.ipynb
-│ ├── 04_data_leakage_analysis.ipynb
-│ ├── 05_model_evaluation.ipynb
-│ └── 06_proteome_prediction.ipynb
-├── src/ # Source code modules
-│ ├── data_collection/ # Data collection and filtering
-│ ├── feature_engineering/ # Feature extraction and processing
-│ ├── models/ # ML models and validation
-│ └── utils/ # Utility functions
-├── data/ # Data storage
-├── models/ # Trained models and features
-└── docs/ # Documentation
+├── src/ppi/                    # Main package
+│   ├── __init__.py            # Package initialization
+│   ├── cli.py                 # Command-line interface
+│   ├── demo_data.py           # Synthetic data generation
+│   ├── features.py            # Feature engineering
+│   ├── models.py              # ML models and pipelines
+│   ├── eval.py                # Evaluation metrics and plots
+│   ├── data_contract.py       # Data validation
+│   └── settings.py            # Configuration
+├── tests/                     # Test suite
+│   ├── test_data_contract.py
+│   ├── test_demo_data.py
+│   ├── test_features.py
+│   ├── test_models.py
+│   └── test_demo_learnability.py
+├── notebooks/                 # Jupyter notebooks for analysis
+│   ├── 01_data_collection_and_filtering.ipynb
+│   ├── 02_feature_engineering.ipynb
+│   ├── 03_model_development.ipynb
+│   ├── 04_data_leakage_analysis.ipynb
+│   ├── 05_model_evaluation.ipynb
+│   └── 06_proteome_prediction.ipynb
+├── .github/workflows/         # CI/CD
+│   └── ci.yml
+├── artifacts/                 # Generated outputs (gitignored)
+├── pyproject.toml            # Package configuration
+├── Makefile                  # Development commands
+└── README.md
+```
 
 ## Quick Start
 
@@ -51,22 +66,43 @@ protein_interactor_prediction/
 ```bash
 git clone https://github.com/risagarg/protein_interactor_prediction.git
 cd protein_interactor_prediction
-pip install -r requirements.txt
+pip install -e .
 ```
 
-### Basic Usage
+### Demo Usage
+
+```bash
+# Run basic demo with synthetic data
+python -m ppi.cli demo
+
+# Run ensemble model demo
+python -m ppi.cli ensemble-demo
+
+# Run single protein prediction demo
+python -m ppi.cli single-protein-demo
+```
+
+### Python API Usage
 
 ```python
-from src.models.ensemble_classifier import ProteinInteractorPredictor
+from ppi import generate_demo, build_pair_features, build_pipeline, eval_metrics
 
-# Initialize predictor
-predictor = ProteinInteractorPredictor()
+# Generate synthetic data
+df_proteins, df_edges = generate_demo()
 
-# Load trained models
-predictor.load_models('models/trained_models/')
+# Build features
+X, y = build_pair_features(df_proteins, df_edges)
 
-# Predict interactions
-predictions = predictor.predict_proteins(protein_list)
+# Train model
+pipeline = build_pipeline("xgboost")
+pipeline.fit(X, y)
+
+# Make predictions
+predictions = pipeline.predict_proba(X)
+
+# Evaluate
+metrics = eval_metrics(y, predictions[:, 1])
+print(f"AUPRC: {metrics['AUPRC']:.3f}")
 ```
 
 ## Methodology
