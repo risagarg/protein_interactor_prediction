@@ -12,23 +12,23 @@ This project presents a machine learning framework for predicting protein-protei
 - DBSCAN clustering for protein grouping
 - XGBoost ensemble models for prediction
 
-## Key Features
+## Features
 
-- Rigorous Methodology: Comprehensive data leakage detection and prevention
-- Scalable Pipeline: Processes entire human proteome (~20,000 proteins)
-- Interpretable Models: SHAP analysis for feature importance
-- Production Ready: Modular code structure with proper validation
+- Comprehensive data leakage detection and prevention
+- Processes Uniprot human proteome (~20,000 proteins)
+- SHAP analysis for feature importance
+- Modular code structure with proper validation
 
 ## Results
 
-- Novel Predictions: Identified 1000 novel protein interactors (tested with amyloid beta)
-- Model Performance: F1-score of 0.78 on holdout data
-- Cross-Validation: 0.76 ± 0.03 F1-score across folds
-- Data Leakage: Zero overlap between training and test sets
+- Identified 1000 novel protein interactors (tested with amyloid beta)
+-  F1-score of 0.78 on holdout data
+-  0.76 ± 0.03 F1-score across folds
 
 ## Project Structure
 ```
 protein_interactor_prediction/
+<<<<<<< HEAD
 ├── src/ppi/                    # Main package
 │   ├── __init__.py            # Package initialization
 │   ├── cli.py                 # Command-line interface
@@ -45,12 +45,16 @@ protein_interactor_prediction/
 │   ├── test_models.py
 │   └── test_demo_learnability.py
 ├── notebooks/                 # Jupyter notebooks for analysis
+=======
+├── notebooks/
+>>>>>>> cb20ebfa38be8a9ea548eb9d7f218d31011659dd
 │   ├── 01_data_collection_and_filtering.ipynb
 │   ├── 02_feature_engineering.ipynb
 │   ├── 03_model_development.ipynb
 │   ├── 04_data_leakage_analysis.ipynb
 │   ├── 05_model_evaluation.ipynb
 │   └── 06_proteome_prediction.ipynb
+<<<<<<< HEAD
 ├── .github/workflows/         # CI/CD
 │   └── ci.yml
 ├── artifacts/                 # Generated outputs (gitignored)
@@ -106,6 +110,10 @@ print(f"AUPRC: {metrics['AUPRC']:.3f}")
 ```
 
 ## Methodology
+=======
+├── README.md
+└── requirements.txt
+>>>>>>> cb20ebfa38be8a9ea548eb9d7f218d31011659dd
 
 ### 1. Data Collection & Filtering
 - Systematic negative dataset creation using STRING network analysis
@@ -130,9 +138,15 @@ print(f"AUPRC: {metrics['AUPRC']:.3f}")
 - Cross-validation with proper feature alignment
 - SHAP analysis for model interpretability
 
-## Scientific Applications
+### 5. Reproducibility 
+- This is a research project demonstrating ML techniques for protein interaction prediction. The notebooks show the complete methodology, but require access to protein databases.
 
-This framework can be applied to:
+## Data Leakage Prevention
+We identified and corrected a data leakage issue in our pipeline. 
+See Notebook 4 for detailed analysis of the problem and solution.
+
+## Scientific Applications
+This framework is meant to be applied to:
 
 - Drug Discovery: Identifying novel drug targets
 - Intrinsically Disordered Proteins: Understanding IDP interactions
@@ -147,16 +161,8 @@ This framework can be applied to:
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License.
+Please feel free to submit a Pull Request.
 
 ## Author
 
 **Risa Garg** - risagarg@sas.upenn.edu
-
----
-
-This project demonstrates advanced machine learning techniques applied to computational biology, showcasing skills in data science, bioinformatics, and rigorous scientific methodology.
