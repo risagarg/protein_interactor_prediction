@@ -1,6 +1,7 @@
-# Machine Learning Framework for Protein-Protein Interaction Prediction
+# Machine Learning Framework for Protein-Protein Interaction Prediction (*FOR ERROR LEARNING PURPOSES ONLY*)
+please read - https://risagarg05.wordpress.com/2026/01/01/the-anatomy-of-a-circular-prediction-a-ppi-case-study/
 
-A comprehensive pipeline for predicting novel protein interactors using ensemble learning, with applications to intrinsically disordered proteins and drug target discovery.
+A comprehensive pipeline for predicting novel protein interactors using ensemble learning
 
 ## Overview
 
@@ -9,7 +10,6 @@ This project presents a machine learning framework for predicting protein-protei
 - ESM-2 protein language model embeddings for sequence-based features
 - UniProt database integration for functional annotations
 - Human Protein Atlas (HPA) expression data
-- DBSCAN clustering for protein grouping
 - XGBoost ensemble models for prediction
 
 ## Features
