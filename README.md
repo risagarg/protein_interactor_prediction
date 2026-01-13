@@ -1,4 +1,4 @@
-# Machine Learning Framework for Protein-Protein Interaction Prediction (*FOR ERROR LEARNING PURPOSES ONLY*)
+# Machine Learning Framework for Protein-Protein Interaction Prediction (*FOR ERROR LEARNING PURPOSES ONLY - THIS REPO IS UNDER CONSTRUCTION *)
 please read - https://risagarg05.wordpress.com/2026/01/01/the-anatomy-of-a-circular-prediction-a-ppi-case-study/
 
 A comprehensive pipeline for predicting novel protein interactors using ensemble learning
